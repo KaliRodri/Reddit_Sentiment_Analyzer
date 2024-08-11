@@ -1,17 +1,17 @@
 # Análise de Sentimentos no Reddit
 
-Este projeto realiza a análise de sentimentos de postagens no Reddit com base em um termo de pesquisa fornecido pelo usuário. Utiliza a API do Reddit através do PRAW e a biblioteca TextBlob para determinar a polaridade dos textos.
+Este projeto realiza a análise de sentimentos de postagens no Reddit com base em um termo de pesquisa fornecido pelo usuário. Utiliza a API do Reddit através do PRAW e a biblioteca VADER para determinar a polaridade dos textos.
 
 ## Pré-requisitos
 
 Certifique-se de ter as seguintes bibliotecas Python instaladas:
 
 - `praw`
-- `textblob`
+- `vaderSentiment`
 
 Você pode instalá-las utilizando o `pip`:
 
-```pip install praw textblob```
+```pip install praw vaderSentiment```
 
 ## Além disso, é necessário configurar as credenciais de acesso à API do Reddit. Você precisará dos seguintes dados:
 
@@ -68,7 +68,7 @@ Anote o client_id, client_secret, e configure o user_agent como desejar (ex.: "m
 ###  Funcionalidades:
 - Conexão ao Reddit usando PRAW.
 - Busca de posts com base em um termo de pesquisa fornecido pelo usuário.
-- Análise de sentimento dos títulos e corpos dos posts usando TextBlob.
+- Análise de sentimento dos títulos e corpos dos posts usando VADER.
 - Interação contínua com o usuário para realizar múltiplas buscas.
 ### Contribuição: 
 Contribuições são bem-vindas! Se você tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou um pull request.
