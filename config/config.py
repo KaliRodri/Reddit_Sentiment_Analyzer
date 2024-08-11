@@ -1,3 +1,3 @@
-CLIENT_ID = 'QLCcLgWBLkftQ7ePiuUV3Q'
-CLIENT_SECRET = 'YG_fyu8up63puXxyDkhh5MaLVB0t4g'
-USER_AGENT = 'my_sentiment_analysis_app/1.0 by KaliRodri'
+CLIENT_ID = 'Your Cliend ID Here'
+CLIENT_SECRET = 'Your Cliend Secret Here'
+USER_AGENT = 'Reddit_Sentiment_Analysis/1.0 by KaliRodri'
