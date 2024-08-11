@@ -37,7 +37,7 @@ Anote o client_id, client_secret, e configure o user_agent como desejar (ex.: "m
 
 ## Configure suas Credenciais no Projeto:
 
-**Crie um arquivo chamado config.py na pasta config com o seguinte conteúdo:**
+**O arquivo config.py na pasta config tem o seguinte conteúdo:**
 - CLIENT_ID = 'seu_client_id_aqui'
 - CLIENT_SECRET = 'seu_client_secret_aqui'
 - USER_AGENT = 'sua_user_agent_aqui'
