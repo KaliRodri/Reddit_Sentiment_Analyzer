@@ -1,6 +1,6 @@
 # Análise de Sentimentos no Reddit
 
-Este projeto realiza a análise de sentimentos de postagens no Reddit com base em um termo de pesquisa fornecido pelo usuário. Utiliza a API do Reddit através do PRAW e a biblioteca VADER para determinar a polaridade dos textos.
+Este projeto realiza a análise de sentimentos de postagens no Reddit com base em um termo de pesquisa fornecido pelo usuário. Utiliza a API do Reddit através do PRAW, biblioteca VADER para determinar a polaridade dos textos e a biblioteca de interface gráfica Tkinter.
 
 ## Pré-requisitos
 
