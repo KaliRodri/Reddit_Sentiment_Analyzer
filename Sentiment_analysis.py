@@ -1,6 +1,8 @@
 import praw
 import config.config as config
-from textblob import TextBlob
+import os
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
 
 def connect_reddit():
     try:
@@ -16,13 +18,15 @@ def connect_reddit():
 
 
 def analyze_emotion(text):
-    analysis = TextBlob(text)
-    if analysis.sentiment.polarity > 0:
+    analyzer = SentimentIntensityAnalyzer()
+    sentiment_scores = analyzer.polarity_scores(text)
+    if sentiment_scores['compound'] > 0:
         return 'Positivo'
-    elif analysis.sentiment.polarity < 0:
+    elif sentiment_scores['compound']  < 0:
         return 'Negativo'
     else:
         return 'Neutro'
+    
 
 def get_posts(reddit, search_term, limit=5):
     subreddit = reddit.subreddit('all')
@@ -33,6 +37,7 @@ def get_posts(reddit, search_term, limit=5):
         print(f"Erro na pesquisa dos posts: {e}")
         return []
     
+    
 def print_analysis_results(posts):
     for post in posts:
         sentiment = analyze_emotion(post.selftext)
@@ -40,18 +45,18 @@ def print_analysis_results(posts):
         if post.selftext:
             print(f"Corpo do Texto: {post.selftext}")
         else:
-            print("Esse post não contém corpo do Texto:")
+            print("Esse post não contém corpo do Texto")
         print(f'Sentimento: {sentiment}')
         print('---')
-
-        
+    
     
 def main():
    
    reddit = connect_reddit()
    repeat = "s"
-   
+   os.system('cls')
    while repeat.lower() == "s":
+    
     search_term = input("Digite o que gostaria que fosse pesquisado no Reddit e veja a análise emocional dos posts: ").strip() 
     if not search_term:
         print("A pesquisa não pode ser vazia")
@@ -61,6 +66,7 @@ def main():
     
     print("Gostaria de pesquisar novamente? Digite 'S' para Sim ou qualquer outra tecla para sair.")
     repeat = input()
-
+    os.system('cls')
+    
 if __name__ == '__main__':
     main()
